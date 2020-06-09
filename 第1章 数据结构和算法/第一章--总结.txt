@@ -1,0 +1,44 @@
+1.1 将序列分解为单独的变量
+    用元组、列表的拆分，变量的个数需要相对应
+1.2 从任意长度的可迭代对象中分解元素
+    使用*符号来分解：a, b, *c = list
+1.3 保存最后N个元素
+    使用collections模块中的deque模块
+1.4 找到最大或最小的N个元素
+    使用heapq模块中的nsmallest()和nlargest()函数
+1.5 实现优先级的队列
+    使用heapq模块中的heappush()和heappop()函数
+1.6 在字典中将键映射到多个值上
+    使用collections模块中的defaultdict模块，将值的类型提前设置，如d = defaultdict(dict)或defaultdict(set)
+1.7 让字典保持有序
+    使用collections模块中的OrderedDict模块，可以使得JSON数据顺序恒定
+1.8 与字典有关的计算
+    键值翻转：zip()函数
+    排序：sorted() + key=
+    最大最小：max()、min() + key=
+1.9 在两个字典中寻找共同点/不同点
+    dict1.keys() & dict2.keys(), dict1.keys() - dict2.keys(), dict1.items() & dict2.items()
+    使用字典推导式
+1.10从序列中移除重复项且保持元素间的顺序关系
+    使用生成器表达式+集合，生成器表达式需要注意是否可哈希
+1.11对切片命名
+    使用slice函数
+1.12找出序列中出现次数最多的元素
+    使用collections模块中的Counter类，并用其most_common(n)方法可以找到最多的前n个元素
+1.13通过公共键对字典列表排序
+    使用sorted函数 + key=operator模块中的itemgetter
+    也可以使用lambda表达式，但速度较慢
+1.14 通过对象的某一个属性对对象进行排序
+    使用sorted函数 + key=operator模块中的attrgetter
+    也可以使用lambda表达式，但速度较慢
+1.16筛选序列中的元素
+    使用列表推导式
+    使用生成器推导式
+    使用filter函数：filter(有参数并返回True或False的函数, Iterable)
+1.17从字典中提取子集
+    使用字典推导式：{key: value for key, value in dict.items()}
+1.19同时对数据做转换和换算
+    sum(),min(),max()等函数 + 生成器表达式
+1.20将多个映射合并成单个映射
+    使用collections模块中的ChainMap类，父实例发生了变化子实例会随着改变
+    使用dict.update(dict2)函数，创建了新的实例，父实例发生变化子实例不变

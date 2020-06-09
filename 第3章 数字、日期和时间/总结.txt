@@ -1,0 +1,48 @@
+3.1 对数值进行取整或四舍五入
+    round(value, n)，为0.5的时候取上一位的偶数，如round(1.55, 1) = 1.6, round(1.45, 1) = 1.4
+
+3.2 执行精确的小数计算(decimal模块中的Decimal类)
+    value = Decimal(str_of_value), 如a = Decimal("1.22")
+    通常的浮点数不能进行比较，Decimal类可以
+
+3.3 对数值做格式化输出
+    format(value, "$n.m$")
+    => 第一个$可选^<>设置对齐选项，n设置总长，m设置小数位长，第二个$设置浮点数还是科学计数法
+
+3.4 二进制、八进制和十六进制
+    bin(value), oct(value), hex(value)分别将value转为二进制、八进制和十六进制的字符串
+    也可以用format(value, "b")、format(value, "o")、format(value, "x")
+
+3.6 复数运算
+    complex(a, b)或a+bj, 期间的三角函数等运算需要用到cmath和np库，普通的math库会抛出异常
+    使用variable.real, variable.imag和variable.conjugate()获取实部、虚部和共轭
+
+3.7 处理无穷大和NaN
+    a = float("inf"), b = float("-inf"), c = float("NaN")
+    NaN随着运算不发生改变, inf/num=inf, num/inf=0.0, inf/inf=nan
+    用math库中的isnan(variable), isinf(variable)判断是否为inf和nan
+
+3.8 分数的计算
+    使用fractions库中的Fraction类，a = Fraction(1, 4), a.denominator获取分母，a.numerator获取分子
+
+3.9 使用numpy处理大型数组
+    numpy.where(condition, a, b)处理条件语句
+
+3.10 矩阵和线性代数的计算
+    from np import matrix
+    a = matrix(...), a.T(转置), a.I(逆), np.linalg.solve(A, b), np.linalg.inv(a)(求逆)
+    np.linalg.det(a)(求行列式), np.linalg.eigvals(a)(求特征值), a*b(矩阵乘法)
+
+3.11 random库进行随机选择
+    a = random.choice(iterable)
+    a = random.sample(iterable, number)
+    random.shuffle(iterable)
+    random.seed(n)
+    random.randint(low, high)(包括)
+    random.random()(均匀分布)
+
+3.12 datetime时间换算
+    a = datetime.datetime.today()
+    b = datetime.datetime(year, month, day)
+    可以进行加减法
+    b.weekday()获取星期几
