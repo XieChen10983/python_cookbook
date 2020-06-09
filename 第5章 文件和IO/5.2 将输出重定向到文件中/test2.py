@@ -5,6 +5,7 @@ time(时间): 2020/4/7 14:45
 filename(文件名): test2.py
 function description(功能描述):
 ...
+    即用print函数将输出写到文件上，而不是控制台上面。
 """
 with open("1.txt", 'rt') as file:
     with open("2.txt", 'at') as f:
